@@ -1,7 +1,7 @@
 coins = int(input())
-a = int(input())%35
-b = int(input())%100
-c = int(input())%10
+a = int(input()) % 35
+b = int(input()) % 100
+c = int(input()) % 10
 count = 0
 while coins > 0:
     coins -= 1
