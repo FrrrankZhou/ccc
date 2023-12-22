@@ -11,16 +11,17 @@ def is_connected(a: str, goal: str) -> bool:
         for child in webpages[parent]:
             if child == goal:
                 return True
-            elif visited[child]:
-                continue
-            visited[parent] = True
-            q.put(child)
+            elif not visited[child]:
+                visited[parent] = True
+                q.put(child)
     return False
 
 
+pattern = r'<A HREF=".*?">'
+
 n = int(input())
 webpages: dict[str:list] = {}
-pattern = r'<A HREF=".*?">'
+
 for i in range(n):
     cur_page = input()
     x = input()
@@ -32,6 +33,7 @@ for i in range(n):
             webpages[cur_page].append(x)
             print(f'Link from {cur_page} to {x}')
         x = input()
+
 x = input()
 while x != 'The End':
     y = input()
