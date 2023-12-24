@@ -20,10 +20,14 @@ def calDiffAndDelArr(s, p):
 
 # even only accept even
 # odd accept both
-# 0 accept 0, 1 accept 0 & 1
-# 2 accept 0&2, 3 accept 0123
-# 4 accept 0&4, 5 accept 0145
-# 6 accept even, 7 accept all
+# O- accept O-
+# O+ accept O-, O+
+# A- accept O-, A-
+# A+ accept O-, O+, A-, A+
+# B- accept O-, B-
+# B+ accept O-, O+, B-, B+
+# AB- accept even
+# AB+ accept all
 # (O-,O+,A-,B-,A+,B+,AB-,AB+)
 # only two method for A+ B+
 # method1: first process for odd, then for even           (A+:A+ O+ A- O-, B+: B+ O+ B- O-)
