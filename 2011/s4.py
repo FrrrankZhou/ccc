@@ -26,6 +26,6 @@ def calDiffAndDelArr(s, p):
 # 6 accept even, 7 accept all
 # (O-,O+,A-,B-,A+,B+,AB-,AB+)
 # only two method for A+ B+
-# method1: first process for even, then for odd           (A+:A+ O+ A- O-, B+: B+ O+ B- O-)
+# method1: first process for odd, then for even           (A+:A+ O+ A- O-, B+: B+ O+ B- O-)
 # method2: first process for same type, then for all type (A+:A+ A- O+ O-, B+: B+ B- O+ O-)
 # 不想写了谁爱写谁写去，什么sb赛博体力活，手速题
