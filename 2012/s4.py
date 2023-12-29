@@ -45,9 +45,13 @@ def bfs(init_state):
                 y = cur_nums[i - 1].pop()
                 if y != -1:
                     cur_nums[i].push(y)
-            if hashable(cur_nums) not in visited:
+            x = hashable(cur_nums)
+            if x == hans:
+                return True
+            elif x not in visited:
                 next_layer.append(cur_nums)
                 visited.add(hashable(cur_nums))
+        return False
 
     count = 0
     visited = set()
@@ -55,14 +59,17 @@ def bfs(init_state):
     this_layer = [init_state]
 
     ans = [Stack(i) for i in range(1, n+1)]
-
-    while hashable(ans) not in visited and this_layer:
+    hans = hashable(ans)
+    found = hans in visited
+    while not found and this_layer:
         next_layer = []
         for cur_state in this_layer:
-            bfs_helper(cur_state)
+            if bfs_helper(cur_state):
+                found = True
+                break
         this_layer = next_layer
         count += 1
-    if hashable(ans) in visited:
+    if found:
         return count
     else:
         return -1
